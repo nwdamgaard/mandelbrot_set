@@ -9,6 +9,6 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 #endif //PCH_H
