@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/Mandelbrot.dir/Mandelbrot_Set/ComplexNumbers.cpp.o CMakeFiles/Mandelbrot.dir/Mandelbrot_Set/Mandelbrot_Set.cpp.o CMakeFiles/Mandelbrot.dir/Mandelbrot_Set/pch.cpp.o  -o Mandelbrot  -lSDL2 
