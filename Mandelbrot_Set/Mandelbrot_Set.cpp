@@ -4,6 +4,7 @@
 #include "pch.h"
 #include <iostream>
 #include <algorithm>
+#include <ctime>
 #include "ComplexNumbers.h"
 
 const int width = 960;
@@ -38,12 +39,20 @@ int main(int argc, char *argv[])
 {
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_Window* window = SDL_CreateWindow("Mandelbrot set", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED || SDL_RENDERER_PRESENTVSYNC);
+	if(renderer == NULL) {
+		return -1;
+	}
+
 
 	bool quit = false;
+	int x_progress = 0;
+	int y_progress = 0;
 	while (!quit) {
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
+
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
